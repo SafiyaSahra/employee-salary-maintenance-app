@@ -24,6 +24,7 @@ public class EmployeeSalaryMaintenance {
     private JLabel lblEnsal;
     private JLabel lblSalMnthsValue;
     private JLabel lblSalMnths;
+    private JButton btnClear;
 
 
     public static void main(String[] args) {
@@ -107,6 +108,8 @@ public class EmployeeSalaryMaintenance {
                 }
 
                 else {
+                    ClearFields();
+
                     JOptionPane.showMessageDialog(null,
                             "Employee ID is not found.",
                             "Error",
@@ -115,6 +118,24 @@ public class EmployeeSalaryMaintenance {
 
             }
         });
+
+
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ClearFields();
+            }
+        });
+    }
+
+    private void ClearFields(){
+        txtEmpId.setText("");
+        lblEidValue.setText("");
+        lblEnameValue.setText("");
+        lblEageValue.setText("");
+        lblEsalValue.setText("");
+        lblEnsalValue.setText("");
+        lblSalMnthsValue.setText("");
     }
 
     public static double Allowance(double x){
@@ -128,6 +149,7 @@ public class EmployeeSalaryMaintenance {
             return x;
         }
     }
+
 
 
 }
